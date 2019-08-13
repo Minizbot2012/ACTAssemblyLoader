@@ -35,7 +35,6 @@ namespace ACTAssemblyLoader
             this.Dock = DockStyle.Fill; // Expand the UserControl to fill the tab's client space
             xmlSettings = new SettingsSerializer(this); // Create a new settings serializer and pass it this instance
             LoadSettings();
-
             lstLog.Items.Add("Plugin Started, loading assemblies...");
             foreach (var assembly in chklstAssemblies.CheckedItems)
             {
