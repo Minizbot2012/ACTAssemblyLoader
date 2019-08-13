@@ -120,4 +120,8 @@
   <metadata name="addDLLFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label1.Text" xml:space="preserve">
+    <value>To add an assembly to preload click the add assembly button and browse to the assembly  to loadTo remove an assmbly: click on the assembly in the list and click Remove Selected Assembly. It is possible to uncheck an assembly on the left to temporarily disable loading that assembly
+</value>
+  </data>
 </root>

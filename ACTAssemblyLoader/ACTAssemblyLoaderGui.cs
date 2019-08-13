@@ -17,7 +17,7 @@ namespace ACTAssemblyLoader
         private CheckedListBox chklstAssemblies;
         private TabPage tabPage2;
         private ListView lstLog;
-        private TextBox txtInstructions;
+        private Label label1;
         #region Designer Created Code (Avoid editing)
         /// <summary> 
         /// Required designer variable.
@@ -49,12 +49,12 @@ namespace ACTAssemblyLoader
             this.addDLLFile = new System.Windows.Forms.OpenFileDialog();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.Tabs = new System.Windows.Forms.TabPage();
-            this.txtInstructions = new System.Windows.Forms.TextBox();
             this.btnRemoveAssembly = new System.Windows.Forms.Button();
             this.btnAddAssembly = new System.Windows.Forms.Button();
             this.chklstAssemblies = new System.Windows.Forms.CheckedListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lstLog = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.Tabs.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -78,7 +78,7 @@ namespace ACTAssemblyLoader
             // 
             // Tabs
             // 
-            this.Tabs.Controls.Add(this.txtInstructions);
+            this.Tabs.Controls.Add(this.label1);
             this.Tabs.Controls.Add(this.btnRemoveAssembly);
             this.Tabs.Controls.Add(this.btnAddAssembly);
             this.Tabs.Controls.Add(this.chklstAssemblies);
@@ -90,35 +90,30 @@ namespace ACTAssemblyLoader
             this.Tabs.Text = "Settings";
             this.Tabs.UseVisualStyleBackColor = true;
             // 
-            // txtInstructions
-            // 
-            this.txtInstructions.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtInstructions.Location = new System.Drawing.Point(456, 63);
-            this.txtInstructions.Multiline = true;
-            this.txtInstructions.Name = "txtInstructions";
-            this.txtInstructions.ReadOnly = true;
-            this.txtInstructions.Size = new System.Drawing.Size(233, 208);
-            this.txtInstructions.TabIndex = 8;
-            this.txtInstructions.Text = resources.GetString("txtInstructions.Text");
-            // 
             // btnRemoveAssembly
             // 
+            this.btnRemoveAssembly.AutoSize = true;
+            this.btnRemoveAssembly.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRemoveAssembly.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRemoveAssembly.Location = new System.Drawing.Point(453, 33);
+            this.btnRemoveAssembly.Location = new System.Drawing.Point(453, 26);
             this.btnRemoveAssembly.Name = "btnRemoveAssembly";
-            this.btnRemoveAssembly.Size = new System.Drawing.Size(236, 30);
+            this.btnRemoveAssembly.Size = new System.Drawing.Size(236, 23);
             this.btnRemoveAssembly.TabIndex = 7;
             this.btnRemoveAssembly.Text = "Remove Selected Assembly";
+            this.btnRemoveAssembly.UseMnemonic = false;
             this.btnRemoveAssembly.UseVisualStyleBackColor = true;
             // 
             // btnAddAssembly
             // 
+            this.btnAddAssembly.AutoSize = true;
+            this.btnAddAssembly.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAddAssembly.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddAssembly.Location = new System.Drawing.Point(453, 3);
             this.btnAddAssembly.Name = "btnAddAssembly";
-            this.btnAddAssembly.Size = new System.Drawing.Size(236, 30);
+            this.btnAddAssembly.Size = new System.Drawing.Size(236, 23);
             this.btnAddAssembly.TabIndex = 6;
             this.btnAddAssembly.Text = "Add Assembly";
+            this.btnAddAssembly.UseMnemonic = false;
             this.btnAddAssembly.UseVisualStyleBackColor = true;
             this.btnAddAssembly.Click += new System.EventHandler(this.btnAddAssembly_Click);
             // 
@@ -154,6 +149,17 @@ namespace ACTAssemblyLoader
             this.lstLog.TabIndex = 4;
             this.lstLog.UseCompatibleStateImageBehavior = false;
             this.lstLog.View = System.Windows.Forms.View.List;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(453, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(236, 222);
+            this.label1.TabIndex = 8;
+            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.UseMnemonic = false;
             // 
             // ACTAssemblyLoader
             // 
