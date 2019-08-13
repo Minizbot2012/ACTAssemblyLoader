@@ -36,18 +36,24 @@ namespace ACTAssemblyLoader
             xmlSettings = new SettingsSerializer(this); // Create a new settings serializer and pass it this instance
             LoadSettings();
 
-            lblStatus.Text = "Plugin Started, loading assemblies...";
-
-            foreach (var assembly in textAssemblies.Text.Split(new[] { "\r", "\n", "\r\n" },StringSplitOptions.RemoveEmptyEntries))
+            lstLog.Items.Add("Plugin Started, loading assemblies...");
+            foreach (var assembly in chklstAssemblies.CheckedItems)
             {
-                var tempAssembly = assembly;
-                lblStatus.Text += Environment.NewLine + "Loading assembly [" + tempAssembly + "]...";
+                var tempAssembly = assembly.ToString();
+                lstLog.Items.Add("Loading assembly [" + tempAssembly + "]...");
                 if (!File.Exists(tempAssembly))
                 {
                     tempAssembly = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + Path.DirectorySeparatorChar + tempAssembly;
                 }
-                Assembly a = Assembly.LoadFile(tempAssembly);
-                lblStatus.Text += " Loaded assembly, location = " + a.Location;
+                try
+                {
+                    Assembly a = Assembly.LoadFile(tempAssembly);
+                    lstLog.Items.Add(" Loaded assembly, location = " + a.Location);
+                }
+                catch
+                {
+                    lstLog.Items.Add(" Error loading assembly");
+                }
             }
         }
 
@@ -55,7 +61,7 @@ namespace ACTAssemblyLoader
         void LoadSettings()
         {
             // Add any controls you want to save the state of
-            xmlSettings.AddControlSetting(textAssemblies.Name, textAssemblies);
+            xmlSettings.AddControlSetting(chklstAssemblies.Name, chklstAssemblies);
             
             if (File.Exists(settingsFile))
             {
@@ -98,6 +104,19 @@ namespace ACTAssemblyLoader
             xWriter.WriteEndDocument(); // Tie up loose ends (shouldn't be any)
             xWriter.Flush();    // Flush the file buffer to disk
             xWriter.Close();
+        }
+        private void btnRemoveAssembly_Click(object sender, EventArgs e)
+        {
+            int sel = chklstAssemblies.SelectedIndex;
+            chklstAssemblies.Items.Remove(sel);
+        }
+
+        private void btnAddAssembly_Click(object sender, EventArgs e)
+        {
+            if(addDLLFile.ShowDialog() == DialogResult.OK)
+            {
+                chklstAssemblies.Items.Add(addDLLFile.FileName, true);
+            }
         }
     }
 }
