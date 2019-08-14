@@ -107,7 +107,7 @@ namespace ACTAssemblyLoader
         private void btnRemoveAssembly_Click(object sender, EventArgs e)
         {
             int sel = chklstAssemblies.SelectedIndex;
-            chklstAssemblies.Items.Remove(sel);
+            chklstAssemblies.Items.RemoveAt(sel);
         }
 
         private void btnAddAssembly_Click(object sender, EventArgs e)

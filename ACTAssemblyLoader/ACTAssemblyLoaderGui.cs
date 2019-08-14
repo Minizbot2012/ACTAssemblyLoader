@@ -49,12 +49,12 @@ namespace ACTAssemblyLoader
             this.addDLLFile = new System.Windows.Forms.OpenFileDialog();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.Tabs = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnRemoveAssembly = new System.Windows.Forms.Button();
             this.btnAddAssembly = new System.Windows.Forms.Button();
             this.chklstAssemblies = new System.Windows.Forms.CheckedListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lstLog = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.Tabs.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -90,6 +90,17 @@ namespace ACTAssemblyLoader
             this.Tabs.Text = "Settings";
             this.Tabs.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(453, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(236, 222);
+            this.label1.TabIndex = 8;
+            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.UseMnemonic = false;
+            // 
             // btnRemoveAssembly
             // 
             this.btnRemoveAssembly.AutoSize = true;
@@ -102,6 +113,7 @@ namespace ACTAssemblyLoader
             this.btnRemoveAssembly.Text = "Remove Selected Assembly";
             this.btnRemoveAssembly.UseMnemonic = false;
             this.btnRemoveAssembly.UseVisualStyleBackColor = true;
+            this.btnRemoveAssembly.Click += new System.EventHandler(this.btnRemoveAssembly_Click);
             // 
             // btnAddAssembly
             // 
@@ -149,17 +161,6 @@ namespace ACTAssemblyLoader
             this.lstLog.TabIndex = 4;
             this.lstLog.UseCompatibleStateImageBehavior = false;
             this.lstLog.View = System.Windows.Forms.View.List;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(453, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 222);
-            this.label1.TabIndex = 8;
-            this.label1.Text = resources.GetString("label1.Text");
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.UseMnemonic = false;
             // 
             // ACTAssemblyLoader
             // 
